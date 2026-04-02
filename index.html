@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ethan Meszaros</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #fafafa;
+      --surface: #ffffff;
+      --text:    #1a1a1a;
+      --muted:   #666;
+      --accent:  #1d4ed8;   /* ATLAS blue-ish */
+      --border:  #e5e5e5;
+      --max-w:   720px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Georgia", serif;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Layout ── */
+    header, main, footer {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    header {
+      padding-top: 4rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: normal;
+      letter-spacing: -0.5px;
+    }
+
+    header p.tagline {
+      margin-top: 0.4rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    header nav {
+      margin-top: 1.2rem;
+      display: flex;
+      gap: 1.5rem;
+      font-family: sans-serif;
+      font-size: 0.875rem;
+    }
+
+    /* ── Sections ── */
+    section {
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section h2 {
+      font-size: 1.1rem;
+      font-weight: normal;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      font-family: sans-serif;
+    }
+
+    /* ── About ── */
+    .about p + p { margin-top: 0.8rem; }
+
+    /* ── Publications ── */
+    .pub-list { list-style: none; display: flex; flex-direction: column; gap: 1.2rem; }
+
+    .pub-list li {
+      padding-left: 1rem;
+      border-left: 2px solid var(--border);
+    }
+
+    .pub-list .pub-title { font-style: italic; }
+    .pub-list .pub-meta  { font-size: 0.875rem; color: var(--muted); font-family: sans-serif; margin-top: 0.15rem; }
+    .pub-list .pub-links { font-size: 0.875rem; font-family: sans-serif; margin-top: 0.3rem; }
+    .pub-list .pub-links a + a::before { content: " · "; color: var(--muted); }
+
+    /* ── CV ── */
+    .cv-link {
+      display: inline-block;
+      font-family: sans-serif;
+      font-size: 0.875rem;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 0.45rem 1rem;
+      border-radius: 4px;
+      transition: background 0.15s, color 0.15s;
+    }
+    .cv-link:hover { background: var(--accent); color: #fff; text-decoration: none; }
+
+    /* ── Footer ── */
+    footer {
+      padding-top: 1.5rem;
+      padding-bottom: 3rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-family: sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Ethan Meszaros</h1>
+  <p class="tagline">Graduate Researcher &mdash; ATLAS Experiment, CERN</p>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#publications">Publications</a>
+    <a href="#cv">CV</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ── About ── -->
+  <section id="about" class="about">
+    <h2>About</h2>
+    <p>
+      I am a graduate student working on the
+      <a href="https://atlas.cern" target="_blank" rel="noopener">ATLAS Experiment</a>
+      at <a href="https://home.cern" target="_blank" rel="noopener">CERN</a>,
+      affiliated with the
+      <a href="https://www.umontreal.ca" target="_blank" rel="noopener">Université de Montréal</a>.
+      My research focuses on using machine learning to search for physics beyond the Standard Model
+      in proton&ndash;proton collision data collected by the ATLAS detector at the Large Hadron Collider.
+    </p>
+    <p>
+      I am interested in the development of novel ML techniques&mdash;including deep neural networks
+      and anomaly detection methods&mdash;that can reveal subtle signals hidden within the enormous
+      datasets produced at the LHC.
+    </p>
+    <!-- TODO: personalise this paragraph -->
+  </section>
+
+  <!-- ── Publications & Talks ── -->
+  <section id="publications">
+    <h2>Publications &amp; Talks</h2>
+    <ul class="pub-list">
+
+      <li>
+        <div class="pub-title"><!-- Paper title --></div>
+        <div class="pub-meta">ATLAS Collaboration &mdash; <!-- Journal / conference, year --></div>
+        <div class="pub-links">
+          <a href="#" target="_blank" rel="noopener">arXiv</a>
+          <a href="#" target="_blank" rel="noopener">INSPIRE</a>
+        </div>
+      </li>
+
+      <li>
+        <div class="pub-title"><!-- Talk title --></div>
+        <div class="pub-meta"><!-- Conference, location, year --></div>
+        <div class="pub-links">
+          <a href="#" target="_blank" rel="noopener">Slides</a>
+        </div>
+      </li>
+
+      <!-- Copy and paste <li>...</li> blocks above to add more entries -->
+
+    </ul>
+  </section>
+
+  <!-- ── CV ── -->
+  <section id="cv">
+    <h2>CV</h2>
+    <p style="margin-bottom:1rem;">A full curriculum vitae is available for download.</p>
+    <a class="cv-link" href="cv.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2026 Ethan Meszaros &mdash;
+  <a href="mailto:you@example.com">you@example.com</a>
+  <!-- Add GitHub, LinkedIn, ORCID links here as needed -->
+</footer>
+
+</body>
+</html>
