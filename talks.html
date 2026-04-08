@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ethan Meszaros &mdash; Talks</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #fafafa;
+      --surface: #ffffff;
+      --text:    #1a1a1a;
+      --muted:   #666;
+      --accent:  #1d4ed8;
+      --border:  #e5e5e5;
+      --max-w:   720px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Georgia", serif;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Layout ── */
+    header, main, footer {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    header {
+      padding-top: 4rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: normal;
+      letter-spacing: -0.5px;
+    }
+
+    header p.tagline {
+      margin-top: 0.4rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    header nav {
+      margin-top: 1.2rem;
+      display: flex;
+      gap: 1.5rem;
+      font-family: sans-serif;
+      font-size: 0.875rem;
+    }
+
+    nav a[aria-current="page"] { color: var(--text); font-weight: bold; }
+
+    /* ── Sections ── */
+    section {
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section h2 {
+      font-size: 1.1rem;
+      font-weight: normal;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      font-family: sans-serif;
+    }
+
+    /* ── Talk list ── */
+    .pub-list { list-style: none; display: flex; flex-direction: column; gap: 1.2rem; }
+
+    .pub-list li {
+      padding-left: 1rem;
+      border-left: 2px solid var(--border);
+    }
+
+    .pub-list .pub-title { font-style: italic; }
+    .pub-list .pub-meta  { font-size: 0.875rem; color: var(--muted); font-family: sans-serif; margin-top: 0.15rem; }
+    .pub-list .pub-links { font-size: 0.875rem; font-family: sans-serif; margin-top: 0.3rem; }
+    .pub-list .pub-links a + a::before { content: " · "; color: var(--muted); }
+
+    /* ── Footer ── */
+    footer {
+      padding-top: 1.5rem;
+      padding-bottom: 3rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-family: sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Ethan Meszaros</h1>
+  <p class="tagline">Graduate Researcher &mdash; ATLAS Experiment, CERN</p>
+  <nav>
+    <a href="index.html">About</a>
+    <a href="research.html">Research</a>
+    <a href="talks.html">Talks</a>
+    <a href="cv.pdf" target="_blank" rel="noopener">CV</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ── Talks, Posters & Workshops ── -->
+  <section id="talks">
+    <h2>Talks, Posters &amp; Workshops</h2>
+    <ul class="pub-list">
+
+      <li>
+        <div class="pub-title">Outreach Talk</div>
+        <div class="pub-meta">Marianopolis College &mdash; Montréal, Canada &middot; 7 Oct 2025 &middot; Invited Talk</div>
+      </li>
+
+      <li>
+        <div class="pub-title">Lepton-Photon 2025 <em style="font-style:normal;font-size:0.85em;color:var(--muted)">(poster distinction)</em></div>
+        <div class="pub-meta">University of Wisconsin &mdash; Madison, U.S. &middot; 25&ndash;29 Aug 2025 &middot; Presenter + Poster</div>
+      </li>
+
+      <li>
+        <div class="pub-title">2nd European AI for Fundamental Physics Conference (EuCAIFCon)</div>
+        <div class="pub-meta">Sardinia, Italy &middot; 17&ndash;19 June 2025 &middot; Poster</div>
+      </li>
+
+      <li>
+        <div class="pub-title">LHC Machine Learning Workshop</div>
+        <div class="pub-meta">CERN &middot; 21 May 2025 &middot; Presenter</div>
+      </li>
+
+      <li>
+        <div class="pub-title">ATLAS ML Workshop</div>
+        <div class="pub-meta">CERN &middot; 2 April 2025 &middot; Presenter</div>
+      </li>
+
+      <li>
+        <div class="pub-title">Machine Learning for Fundamental Physics School</div>
+        <div class="pub-meta">Lawrence Berkeley National Laboratory &mdash; Berkeley, U.S. &middot; 12&ndash;16 Aug 2024 &middot; Attendee</div>
+      </li>
+
+      <li>
+        <div class="pub-title">ATLAS Canada Workshop</div>
+        <div class="pub-meta">Montréal, Canada &middot; 24 May 2024 &middot; Presenter</div>
+      </li>
+
+      <li>
+        <div class="pub-title">ATLAS Canada Summer Students Presentations</div>
+        <div class="pub-meta">Montréal, Canada &middot; 30 Aug 2023 &middot; Presenter</div>
+      </li>
+
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2026 Ethan Meszaros &mdash;
+  <a href="mailto:ethan.james.meszaros@cern.ch">ethan.james.meszaros@cern.ch</a>
+</footer>
+
+<script>
+  document.querySelectorAll('nav a').forEach(function(link) {
+    if (link.getAttribute('href') === 'talks.html') {
+      link.setAttribute('aria-current', 'page');
+    }
+  });
+</script>
+
+</body>
+</html>

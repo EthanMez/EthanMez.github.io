@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ethan Meszaros</title>
+  <title>Ethan Meszaros &mdash; About</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -61,6 +61,8 @@
       font-size: 0.875rem;
     }
 
+    nav a[aria-current="page"] { color: var(--text); font-weight: bold; }
+
     /* ── Sections ── */
     section {
       padding: 2.5rem 0;
@@ -80,18 +82,11 @@
     /* ── About ── */
     .about p + p { margin-top: 0.8rem; }
 
-    /* ── Publications ── */
-    .pub-list { list-style: none; display: flex; flex-direction: column; gap: 1.2rem; }
-
-    .pub-list li {
-      padding-left: 1rem;
-      border-left: 2px solid var(--border);
-    }
-
-    .pub-list .pub-title { font-style: italic; }
-    .pub-list .pub-meta  { font-size: 0.875rem; color: var(--muted); font-family: sans-serif; margin-top: 0.15rem; }
-    .pub-list .pub-links { font-size: 0.875rem; font-family: sans-serif; margin-top: 0.3rem; }
-    .pub-list .pub-links a + a::before { content: " · "; color: var(--muted); }
+    /* ── Education ── */
+    .edu-list { list-style: none; display: flex; flex-direction: column; gap: 1.5rem; }
+    .edu-list li { padding-left: 1rem; border-left: 2px solid var(--border); }
+    .edu-list .edu-degree { font-style: italic; }
+    .edu-list .edu-meta { font-size: 0.875rem; color: var(--muted); font-family: sans-serif; margin-top: 0.15rem; }
 
     /* ── CV ── */
     .cv-link {
@@ -122,9 +117,10 @@
   <h1>Ethan Meszaros</h1>
   <p class="tagline">Graduate Researcher &mdash; ATLAS Experiment, CERN</p>
   <nav>
-    <a href="#about">About</a>
-    <a href="#publications">Publications</a>
-    <a href="#cv">CV</a>
+    <a href="index.html">About</a>
+    <a href="research.html">Research</a>
+    <a href="talks.html">Talks</a>
+    <a href="cv.pdf" target="_blank" rel="noopener">CV</a>
   </nav>
 </header>
 
@@ -138,41 +134,40 @@
       <a href="https://atlas.cern" target="_blank" rel="noopener">ATLAS Experiment</a>
       at <a href="https://home.cern" target="_blank" rel="noopener">CERN</a>,
       affiliated with the
-      <a href="https://www.umontreal.ca" target="_blank" rel="noopener">Université de Montréal</a>.
-      My research focuses on using machine learning to search for physics beyond the Standard Model
-      in proton&ndash;proton collision data collected by the ATLAS detector at the Large Hadron Collider.
+      <a href="https://www.umontreal.ca" target="_blank" rel="noopener">Université de Montréal</a>
+      under the supervision of
+      <a href="https://www.physics.umontreal.ca/personnel/professeurs/arguin-jean-francois" target="_blank" rel="noopener">Prof. Jean-François Arguin</a>.
+      My research focuses on ML-based anomaly detection for searches for physics beyond the Standard
+      Model in proton&ndash;proton collision data collected by the ATLAS detector at the Large Hadron
+      Collider, as well as detector hardware development for the ATLAS Inner Tracker upgrade.
     </p>
     <p>
-      I am interested in the development of novel ML techniques&mdash;including deep neural networks
-      and anomaly detection methods&mdash;that can reveal subtle signals hidden within the enormous
-      datasets produced at the LHC.
+      Outside of physics I have over a decade of experience in music recording and film production.
+      My short films have received Official Selection, Finalist, and Preselection distinctions at
+      international film festivals, and I hold an Award of Merit from the IndieFest Film Awards.
     </p>
-    <!-- TODO: personalise this paragraph -->
   </section>
 
-  <!-- ── Publications & Talks ── -->
-  <section id="publications">
-    <h2>Publications &amp; Talks</h2>
-    <ul class="pub-list">
+  <!-- ── Education ── -->
+  <section id="education">
+    <h2>Education</h2>
+    <ul class="edu-list">
 
       <li>
-        <div class="pub-title"><!-- Paper title --></div>
-        <div class="pub-meta">ATLAS Collaboration &mdash; <!-- Journal / conference, year --></div>
-        <div class="pub-links">
-          <a href="#" target="_blank" rel="noopener">arXiv</a>
-          <a href="#" target="_blank" rel="noopener">INSPIRE</a>
+        <div class="edu-degree">M.Sc. Experimental High-Energy Physics</div>
+        <div class="edu-meta">
+          Université de Montréal &mdash; May 2024&ndash;present<br>
+          Supervisor: Jean-François Arguin &middot; GPA: 4.3 / 4.3
         </div>
       </li>
 
       <li>
-        <div class="pub-title"><!-- Talk title --></div>
-        <div class="pub-meta"><!-- Conference, location, year --></div>
-        <div class="pub-links">
-          <a href="#" target="_blank" rel="noopener">Slides</a>
+        <div class="edu-degree">B.Sc. Physics (Minors: Mathematics &amp; Psychology)</div>
+        <div class="edu-meta">
+          McGill University &mdash; Sept 2019&ndash;Apr 2024<br>
+          GPA: 3.79 / 4.00
         </div>
       </li>
-
-      <!-- Copy and paste <li>...</li> blocks above to add more entries -->
 
     </ul>
   </section>
@@ -188,9 +183,16 @@
 
 <footer>
   &copy; 2026 Ethan Meszaros &mdash;
-  <a href="mailto:you@example.com">you@example.com</a>
-  <!-- Add GitHub, LinkedIn, ORCID links here as needed -->
+  <a href="mailto:ethan.james.meszaros@cern.ch">ethan.james.meszaros@cern.ch</a>
 </footer>
+
+<script>
+  document.querySelectorAll('nav a').forEach(function(link) {
+    if (link.getAttribute('href') === 'index.html' || link.getAttribute('href') === '') {
+      link.setAttribute('aria-current', 'page');
+    }
+  });
+</script>
 
 </body>
 </html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ethan Meszaros &mdash; Research</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #fafafa;
+      --surface: #ffffff;
+      --text:    #1a1a1a;
+      --muted:   #666;
+      --accent:  #1d4ed8;
+      --border:  #e5e5e5;
+      --max-w:   720px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Georgia", serif;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Layout ── */
+    header, main, footer {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    header {
+      padding-top: 4rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: normal;
+      letter-spacing: -0.5px;
+    }
+
+    header p.tagline {
+      margin-top: 0.4rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    header nav {
+      margin-top: 1.2rem;
+      display: flex;
+      gap: 1.5rem;
+      font-family: sans-serif;
+      font-size: 0.875rem;
+    }
+
+    nav a[aria-current="page"] { color: var(--text); font-weight: bold; }
+
+    /* ── Sections ── */
+    section {
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section h2 {
+      font-size: 1.1rem;
+      font-weight: normal;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      font-family: sans-serif;
+    }
+
+    /* ── Publication / project list ── */
+    .pub-list { list-style: none; display: flex; flex-direction: column; gap: 1.2rem; }
+
+    .pub-list li {
+      padding-left: 1rem;
+      border-left: 2px solid var(--border);
+    }
+
+    .pub-list .pub-title { font-style: italic; }
+    .pub-list .pub-meta  { font-size: 0.875rem; color: var(--muted); font-family: sans-serif; margin-top: 0.15rem; }
+    .pub-list .pub-desc  { font-size: 0.9375rem; margin-top: 0.4rem; }
+    .pub-list .pub-links { font-size: 0.875rem; font-family: sans-serif; margin-top: 0.3rem; }
+    .pub-list .pub-links a + a::before { content: " · "; color: var(--muted); }
+
+    /* ── Section sub-label ── */
+    .section-label {
+      font-family: sans-serif;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+      margin-top: 1.5rem;
+    }
+    .section-label:first-child { margin-top: 0; }
+
+    /* ── Supervision prose list ── */
+    .supervision-list { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
+    .supervision-list li { padding-left: 1rem; border-left: 2px solid var(--border); }
+    .supervision-list .sup-role { font-style: italic; }
+    .supervision-list .sup-meta { font-size: 0.875rem; color: var(--muted); font-family: sans-serif; margin-top: 0.1rem; }
+
+    /* ── Footer ── */
+    footer {
+      padding-top: 1.5rem;
+      padding-bottom: 3rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-family: sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Ethan Meszaros</h1>
+  <p class="tagline">Graduate Researcher &mdash; ATLAS Experiment, CERN</p>
+  <nav>
+    <a href="index.html">About</a>
+    <a href="research.html">Research</a>
+    <a href="talks.html">Talks</a>
+    <a href="cv.pdf" target="_blank" rel="noopener">CV</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ── Research Projects ── -->
+  <section id="projects">
+    <h2>Research Projects</h2>
+    <ul class="pub-list">
+
+      <li>
+        <div class="pub-title">BumpNet &mdash; ML for Bump-Hunting</div>
+        <div class="pub-meta">With Jean-François Arguin &middot; May 2024&ndash;present</div>
+        <div class="pub-desc">
+          Responsible for the training paradigm of BumpNet&mdash;a supervised anomaly detection
+          approach for histogram data&mdash;on ATLAS Monte Carlo, producing the best-performing
+          models seen to date. Developed a method for extracting background distributions via
+          a constrained Gaussian Process model (used by the ATLAS JMX group as a reference).
+          Built machinery to quantify systematic uncertainties unique to BumpNet and is currently
+          assessing sensitivity to simulated BSM signatures.
+        </div>
+      </li>
+
+      <li>
+        <div class="pub-title">ATLAS Inner Tracker (ITk) Upgrade</div>
+        <div class="pub-meta">With Andreas Warburton &amp; Jean-François Arguin &middot; Jan 2023&ndash;present</div>
+        <div class="pub-desc">
+          Developed the first software at Université de Montréal for analyzing defects and
+          performance of ATLAS ITk front-ends, identifying issues unnoticed by other institutes
+          and attracting wider input from the ATLAS ITk community. Oversees weekly visual
+          inspections and burn-ins of hybrid panels, and designed a smoke detector with a web
+          interface to automatically shut down burn-in procedures in case of overheating.
+        </div>
+      </li>
+
+      <li>
+        <div class="pub-title">Observable Effects of Cosmic Strings</div>
+        <div class="pub-meta">With Robert Brandenberger &middot; Jan&ndash;May 2024</div>
+        <div class="pub-desc">
+          Simulated a 3-D model of cosmic string loops acting on galaxy distributions and compared
+          results to observations by Peebles (2023). Found that coupled cosmic strings are a
+          plausible explanation of observed flat structures, with effects remaining statistically
+          significant across various observation angles.
+        </div>
+      </li>
+
+    </ul>
+  </section>
+
+  <!-- ── Publications ── -->
+  <section id="publications">
+    <h2>Publications</h2>
+
+    <p class="section-label">Journal Articles</p>
+    <ul class="pub-list">
+
+      <li>
+        <div class="pub-title">Automatizing the search for mass resonances using BumpNet</div>
+        <div class="pub-meta">
+          J. F. Arguin, G. Azuelos, É. Baril, I. Bessudo, F. Bilodeau, M. Borysova, S. Bressler,
+          S. Calvet, J. Donini, E. Dreyer, M. K. L. Chu, E. Mayer, <strong>E. Meszaros</strong>,
+          N. Kakati, B. P. Dias, J. Potdevin, A. Shkuri &amp; M. Usman
+          &mdash; <em>J. High Energ. Phys.</em> 02 (2025) 122
+        </div>
+        <div class="pub-links">
+          <a href="https://arxiv.org/abs/2501.05603" target="_blank" rel="noopener">arXiv:2501.05603</a>
+          <a href="https://link.springer.com/article/10.1007/JHEP02(2025)122" target="_blank" rel="noopener">JHEP</a>
+        </div>
+      </li>
+
+    </ul>
+
+    <p class="section-label">Proceedings</p>
+    <ul class="pub-list">
+
+      <li>
+        <div class="pub-title">Automatizing the search for mass resonances using BumpNet</div>
+        <div class="pub-meta">
+          J. F. Arguin et al. &mdash; 2nd European AI for Fundamental Physics Conference (EuCAIFCon), 2025
+        </div>
+        <div class="pub-links">
+          <a href="https://arxiv.org/abs/2509.16282" target="_blank" rel="noopener">arXiv:2509.16282</a>
+        </div>
+      </li>
+
+    </ul>
+  </section>
+
+  <!-- ── Supervision & Teaching ── -->
+  <section id="supervision">
+    <h2>Supervision &amp; Teaching</h2>
+    <ul class="supervision-list">
+
+      <li>
+        <div class="sup-role">Co-supervisor (Undergraduate Research)</div>
+        <div class="sup-meta">
+          Nicolas Simard &mdash; Université de Montréal, Sept 2025&ndash;present<br>
+          Studying BumpNet&rsquo;s performance on different signal shapes, with Prof. Jean-François Arguin.
+        </div>
+      </li>
+
+      <li>
+        <div class="sup-role">Co-supervisor (CEGEP Research Project)</div>
+        <div class="sup-meta">
+          Béatrice Richer &mdash; Université de Montréal, June&ndash;Aug 2025<br>
+          Studied BumpNet&rsquo;s false discovery rate; presented at the 2025 ATLAS Summer Students Presentations.
+        </div>
+      </li>
+
+      <li>
+        <div class="sup-role">Course Mentor &mdash; Electromagnetism &amp; Optics</div>
+        <div class="sup-meta">McGill University &mdash; Jan&ndash;Apr 2024</div>
+      </li>
+
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2026 Ethan Meszaros &mdash;
+  <a href="mailto:ethan.james.meszaros@cern.ch">ethan.james.meszaros@cern.ch</a>
+</footer>
+
+<script>
+  document.querySelectorAll('nav a').forEach(function(link) {
+    if (link.getAttribute('href') === 'research.html') {
+      link.setAttribute('aria-current', 'page');
+    }
+  });
+</script>
+
+</body>
+</html>
